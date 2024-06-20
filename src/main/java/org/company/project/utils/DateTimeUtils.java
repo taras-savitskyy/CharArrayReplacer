@@ -6,7 +6,7 @@ import lombok.experimental.UtilityClass;
 public class DateTimeUtils {
 
     public static long wTime(long time) {
-        return System.currentTimeMillis() - time;
+        return System.nanoTime() - time;
     }
 
 }

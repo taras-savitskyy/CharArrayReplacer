@@ -12,7 +12,7 @@ public class CharArraySubstitutionUtils {
     private static final Logger logger = LoggerFactory.getLogger(StringSubstitutionUtils.class);
 
     public static char[] replaceSubarray(char[] source, char[] subarray, char[] replacement) {
-        long wTime = System.currentTimeMillis();
+        long wTime = System.nanoTime();
 
         if (source == null || subarray == null || replacement == null) {
             throw new IllegalArgumentException("Input arrays cannot be null");

@@ -10,7 +10,7 @@ public class StringSubstitutionUtils {
     private static final Logger logger = LoggerFactory.getLogger(StringSubstitutionUtils.class);
 
     public static char[] replaceSubarray(char[] source, char[] subarray, char[] replacement) {
-        long wTime = System.currentTimeMillis();
+        long wTime = System.nanoTime();
 
         String sourceString = new String(source);
         String subarrayString = new String(subarray);
