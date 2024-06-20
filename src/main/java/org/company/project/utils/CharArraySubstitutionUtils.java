@@ -27,12 +27,11 @@ public class CharArraySubstitutionUtils {
         int i = 0;
 
         while (i < source.length) {
-            // Check if subarray matches source starting at index start
-            if (matchesPattern(source, subarray, i)) {
+            if (isSubarrayMatch(source, subarray, i)) {
                 for (char c : replacement) {
                     resultList.add(c);
                 }
-                i += subarrayLength; // Skip past the matched segment
+                i += subarrayLength;
             } else {
                 resultList.add(source[i]);
                 i++;
@@ -54,9 +53,9 @@ public class CharArraySubstitutionUtils {
         return result;
     }
 
-    private static boolean matchesPattern(char[] source, char[] pattern, int index) {
-        for (int i = 0; i < pattern.length; i++) {
-            if (source[index + i] != pattern[i]) {
+    private static boolean isSubarrayMatch(char[] source, char[] subarray, int index) {
+        for (int i = 0; i < subarray.length; i++) {
+            if (source[index + i] != subarray[i]) {
                 return false;
             }
         }
