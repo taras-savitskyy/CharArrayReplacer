@@ -12,6 +12,14 @@ public class StringSubstitutionUtils {
     public static char[] replaceSubarray(char[] source, char[] subarray, char[] replacement) {
         long wTime = System.nanoTime();
 
+        if (source == null || subarray == null || replacement == null) {
+            throw new IllegalArgumentException("Input arrays cannot be null");
+        }
+
+        if (subarray.length == 0) {
+            return source;
+        }
+
         String sourceString = new String(source);
         String subarrayString = new String(subarray);
         String replacementString = new String(replacement);

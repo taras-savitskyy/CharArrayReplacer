@@ -9,7 +9,7 @@ import org.junit.jupiter.api.Test;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 
-public class CharArraySubstitutionUtilsUnitTest {
+public class StringSubstitutionUtilsUnitTest {
 
     private final static String SOURCE_STRING = "Test data pack";
     private final static String REPLACEMENT_STRING = "123";
@@ -28,7 +28,7 @@ public class CharArraySubstitutionUtilsUnitTest {
         char[] subarray = "a".toCharArray();
         char[] replacement = REPLACEMENT_STRING.toCharArray();
 
-        char[] result = CharArraySubstitutionUtils.replaceSubarray(source, subarray, replacement);
+        char[] result = StringSubstitutionUtils.replaceSubarray(source, subarray, replacement);
 
         assertArrayEquals("Test d123t123 p123ck".toCharArray(), result);
     }
@@ -38,7 +38,7 @@ public class CharArraySubstitutionUtilsUnitTest {
         char[] subarray = "o".toCharArray();
         char[] replacement = REPLACEMENT_STRING.toCharArray();
 
-        assertThrows(IllegalArgumentException.class, () -> CharArraySubstitutionUtils.replaceSubarray(null, subarray, replacement));
+        assertThrows(IllegalArgumentException.class, () -> StringSubstitutionUtils.replaceSubarray(null, subarray, replacement));
     }
 
     @Test
@@ -46,7 +46,7 @@ public class CharArraySubstitutionUtilsUnitTest {
         char[] source = SOURCE_STRING.toCharArray();
         char[] replacement = REPLACEMENT_STRING.toCharArray();
 
-        assertThrows(IllegalArgumentException.class, () -> CharArraySubstitutionUtils.replaceSubarray(source, null, replacement));
+        assertThrows(IllegalArgumentException.class, () -> StringSubstitutionUtils.replaceSubarray(source, null, replacement));
     }
 
     @Test
@@ -54,7 +54,7 @@ public class CharArraySubstitutionUtilsUnitTest {
         char[] source = SOURCE_STRING.toCharArray();
         char[] subarray = "a".toCharArray();
 
-        assertThrows(IllegalArgumentException.class, () -> CharArraySubstitutionUtils.replaceSubarray(source, subarray, null));
+        assertThrows(IllegalArgumentException.class, () -> StringSubstitutionUtils.replaceSubarray(source, subarray, null));
     }
 
     @Test
@@ -63,7 +63,7 @@ public class CharArraySubstitutionUtilsUnitTest {
         char[] subarray = new char[0];
         char[] replacement = REPLACEMENT_STRING.toCharArray();
 
-        char[] result = CharArraySubstitutionUtils.replaceSubarray(source, subarray, replacement);
+        char[] result = StringSubstitutionUtils.replaceSubarray(source, subarray, replacement);
 
         assertArrayEquals(source, result);
     }
@@ -74,7 +74,7 @@ public class CharArraySubstitutionUtilsUnitTest {
         char[] subarray = "xyz".toCharArray();
         char[] replacement = REPLACEMENT_STRING.toCharArray();
 
-        char[] result = CharArraySubstitutionUtils.replaceSubarray(source, subarray, replacement);
+        char[] result = StringSubstitutionUtils.replaceSubarray(source, subarray, replacement);
 
         assertArrayEquals(source, result);
     }
