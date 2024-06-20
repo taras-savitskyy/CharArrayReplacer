@@ -9,7 +9,7 @@ import org.slf4j.LoggerFactory;
 @UtilityClass
 public class CharArraySubstitutionUtils {
 
-    private static final Logger logger = LoggerFactory.getLogger(StringSubstitutionUtils.class);
+    private static final Logger logger = LoggerFactory.getLogger(CharArraySubstitutionUtils.class);
 
     public static char[] replaceSubarray(char[] source, char[] subarray, char[] replacement) {
         long wTime = System.nanoTime();
